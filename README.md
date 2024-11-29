@@ -10,6 +10,7 @@
 ![image](https://github.com/user-attachments/assets/c53c53a4-816a-4366-a0f0-cb7f3c443e6d)
 
 # Report 1: Find Developer in Company
+![image](https://github.com/user-attachments/assets/e693613e-5f6f-45d0-ace0-ff39f4ab07e6)
 ![image](https://github.com/user-attachments/assets/171cc377-ce2d-41ef-b3ea-e6c8395eba59)
 
 # Report 2: View Candidate At Least 5 Experience
