@@ -1,0 +1,47 @@
+body {
+    max-width: 100%;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Thêm màu nền nhẹ để làm nổi bật bảng */
+    color: #333; /* Màu chữ tối để dễ đọc */
+}
+
+table {
+    width: 100%; /* Bảng chiếm toàn bộ chiều rộng */
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px; /* Thêm khoảng cách phía trên bảng */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tạo bóng nhẹ cho bảng */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px; /* Thêm khoảng cách bên trong */
+}
+
+th {
+    background-color: #999999;
+    color: white; /* Chữ trắng trên nền xám */
+    text-transform: uppercase; /* Chữ in hoa */
+    font-weight: bold;
+}
+
+td {
+    background-color: #FFFFFF;
+}
+
+tr:nth-child(even) td {
+    background-color: #f2f2f2; /* Thêm màu xen kẽ cho các hàng */
+}
+
+a {
+    color: #007bff; /* Màu xanh cho liên kết */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+h1, h2, a{
+    text-align: center;
+}

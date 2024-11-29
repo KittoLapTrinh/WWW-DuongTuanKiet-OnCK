@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Detail</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <h1>View Candidate</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="can : ${candidates}">
+                <td th:text="${can.id}"></td>
+                <td th:text="${can.email}"></td>
+                <td th:text="${can.fullName}"></td>
+                <td th:text="${can.phone}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h1>View Company</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Company Name</th>
+                <th>Role</th>
+                <th>Work Description</th>
+                <th>From Date</th>
+                <th>To Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="exp : ${candidates.experiences}">
+                <td th:text="${exp.id}"></td>
+                <td th:text="${exp.company}"></td>
+                <td th:text="${exp.role}"></td>
+                <td th:text="${exp.workDescription}"></td>
+                <td th:text="${exp.fromDate}"></td>
+                <td th:text="${exp.toDate}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
