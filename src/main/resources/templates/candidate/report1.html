@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <h1>Find Developer in Company</h1>
+    <form method="post" th:hidden="${showTable != false}">
+        <label>Company Name</label>
+        <input type="text" id="company" name = "company">
+        <button type="submit">Find</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>View Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="can : ${candidates}">
+                <td th:text="${can.id}"></td>
+                <td th:text="${can.phone}"></td>
+                <td th:text="${can.email}"></td>
+                <td th:text="${can.fullName}"></td>
+                <td><a th:href="@{/candidate/detail/{id}(id=${can.id})}">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

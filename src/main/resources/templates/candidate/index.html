@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Candidate</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<h1>List Candidates</h1><br>
+<h3>Insert Candidates</h3>
+<div class="form-insert">
+    <form action="candidate/insert" method="post">
+        <label>Email: </label>
+        <input type="email" id="email" name = "email" required><br>
+
+        <label>Full Name: </label>
+        <input type="text" id="fullName" name = "fullName" required><br>
+
+        <label>Phone: </label>
+        <input type="phone" id="phone" name = "phone" required><br>
+
+        <button class="btn-insert" type="submit">Insert</button>
+    </form>
+</div>
+
+<br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>Phone</th>
+                <th>View Detail</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="can : ${candidates}">
+                <td th:text="${can.id}"></td>
+                <td th:text="${can.email}"></td>
+                <td th:text="${can.fullName}"></td>
+                <td th:text="${can.phone}"></td>
+                <td><a th:href="@{candidate/detail/{id}(id=${can.id})}">View</a></td>
+                <td>
+                    <form th:action="@{/candidate/delete/{id}(id=${can.id})}" method="post">
+                        <button class="btn-delete" type="submit">Delete</button>
+                    </form>
+<!--                    <form th:href="@{/candidate/edit/{id}(id=${can.id})}" method="get">-->
+<!--                        <button class="btn-edit" type="button">Edit</button>-->
+<!--                    </form>-->
+                    <a th:href="@{/candidate/edit/{id}(id=${can.id})}" class="btn-edit">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

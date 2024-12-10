@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <h1>Edit Candidate</h1>
+    <form th:action="@{/candidate/update}" method="post">
+        <input type="hidden" name="id" th:value="${candidate.id}">
+
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" th:value="${candidate.email}" required>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" th:value="${candidate.fullName}" required><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" th:value="${candidate.phone}" required><br>
+
+        <button type="submit" class="btn-save">Save</button>
+        <a href="/candidate" class="btn-cancel">Cancel</a>
+
+    </form>
+</body>
+</html>
