@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import vn.edu.iuh.fit.wwwduongtuankietck.backend.services.ExperienceService;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,8 +30,24 @@ public class CandidateController {
     }
 
     @GetMapping("/candidate")
-    public String getCandidate(Model model){
-        model.addAttribute("candidates", candidateService.getAllCandidate());
+    public String getCandidate(Model model, @RequestParam(required = false) String rolefilterStr){
+        Collection<Candidate> candidates = candidateService.getAllCandidate();
+
+        if(rolefilterStr != null && !rolefilterStr.isEmpty()) {
+            try {
+                Roles rolefilter = Roles.valueOf(rolefilterStr);
+                candidates = candidates.stream()
+                        .filter(candidate -> candidate.getExperiences().stream()
+                                .anyMatch(exp -> exp.getRole() == rolefilter))
+                        .collect(Collectors.toList());
+                model.addAttribute("rolefilter", rolefilter);
+            } catch (IllegalArgumentException e) {
+                model.addAttribute("errorMessage", "Invalid role value");
+            }
+        }
+        model.addAttribute("candidates", candidates);
+        model.addAttribute("roles", Roles.values());
+
         return "candidate/index";
     }
 

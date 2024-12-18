@@ -14,6 +14,10 @@ import java.time.LocalDate;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@NamedQueries({
+        @NamedQuery(name = "Experience.findByRole",
+                    query = "select e from Experience e where e.role = :role")
+})
 public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
