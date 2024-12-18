@@ -1,5 +1,4 @@
-![image](https://github.com/user-attachments/assets/4e885265-30f2-42ba-af84-3d26e92a4325)![image](https://github.com/user-attachments/assets/05288869-613a-4004-992a-c4712c042d31)# WWW-DuongTuanKiet-OnCK
-
+# Duong Tuan Kiet - 20001545
 ```
 CRUD
 Find Developer in Company
